@@ -1,0 +1,32 @@
+.card {
+  width: 150px;
+  height: 210px;
+  background: #007bff;
+  color: white;
+  border: 2px solid #0056b3;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
+}
+
+/* Stacked deck positions */
+.cardDeck {
+  transform: translate(
+    calc(var(--index) * 5px),
+    calc(var(--index) * 5px)
+  );
+}
+
+/* Grid layout positions */
+.cardGrid {
+  transform: translate(
+    calc(var(--column) * 300px - var(--deck-left-offset)), /* Horizontal offset from deck */
+    calc(var(--row) * 300px + var(--deck-top-offset)) /* Vertical offset below deck */
+  );
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition-delay: calc(var(--index) * 0.1s);
+}

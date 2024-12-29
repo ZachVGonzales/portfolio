@@ -1,0 +1,37 @@
+.container {
+  position: relative;
+  min-height: 200vh;
+  flex: auto;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding: 20px;
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit browsers */
+}
+
+.deckPlaceholder {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 160px;
+}
+
+.showPlaceholder {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.deck {
+  position: absolute;
+  width: auto;
+  height: auto;
+}
