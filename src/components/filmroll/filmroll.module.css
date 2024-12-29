@@ -1,0 +1,90 @@
+.filmRoll {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  width: 180px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent film roll content from overflowing */
+  justify-content: flex-start; /* Align content to the top */
+}
+
+/* Side Positions */
+.left {
+  left: 10;
+}
+
+.right {
+  right: 10;
+}
+
+/* Sprocket Holes */
+.sprocketHoles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px; /* Adjust spacing between sprocket holes */
+  height: 100%;
+  padding: 10px 0;
+}
+
+.sprocketHole {
+  background-color: white;
+  height: 15px;
+  width: 15px;
+  border-radius: 5px;
+}
+
+/* Image Container */
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Image Styles */
+.image {
+  height: 150px; /* Adjust as needed */
+  width: 150px; /* Fill the film roll width */
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.image:hover {
+  transform: scale(1.1); /* Zoom effect */
+  cursor: pointer;
+}
+
+.imageWithHoles {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: space-between; /* Push sprocket holes to the edges */
+}
+
+.filmRoll::-webkit-scrollbar {
+  width: 10px; /* Customize scrollbar width */
+}
+
+.filmRoll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5); /* Customize scrollbar thumb */
+  border-radius: 5px;
+}
+
+.filmRoll::-webkit-scrollbar-track {
+  background-color: transparent; /* Customize scrollbar track */
+}
+
+.imageContainer::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit browsers */
+}
