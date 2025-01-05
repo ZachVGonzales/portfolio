@@ -28,6 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   icon,
   suit,
   description,
+  link,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -78,6 +79,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className={styles.cardBack}>
           <p className={styles.cardDescription}>
             {description}
+            <a href={link} target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+              Github
+            </a>
           </p>
           <img
             className={styles.suitTopLeft}

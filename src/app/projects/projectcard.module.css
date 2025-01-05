@@ -79,6 +79,18 @@
   line-height: 1.6;
 }
 
+.cardLink {
+  display: block;
+  text-align: center;
+  margin-top: 10px; /* Adjust as needed */
+  color: #0070f3; /* Change this to your preferred color */
+  text-decoration: none;
+}
+
+.cardLink:hover {
+  text-decoration: underline;
+}
+
 .cardInner {
   position: relative;
   width: 100%;
