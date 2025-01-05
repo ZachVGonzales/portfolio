@@ -8,8 +8,8 @@ const Home: React.FC = () => {
       <ProfilePic />
       <h1 className={"nameTitle"}>Zach Gonzales</h1>
       <p className={"description"}>
-        Hi, I'm Zach Gonzales, I enjoy surfing, climbing, and backpacking!
-        I'm a 3rd year currently attending Cal Poly SLO. If you have any
+        Hi, I&aposm Zach Gonzales, I enjoy surfing, climbing, and backpacking!
+        I&aposm a 3rd year currently attending Cal Poly SLO. If you have any
         questions, please contact me at ZachVGonzales@gmail.com.
       </p>
 
