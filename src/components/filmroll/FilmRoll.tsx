@@ -14,7 +14,7 @@ const FilmRoll: React.FC<FilmRollProps> = ({ images, side }) => {
   };
 
   return (
-    <div className={`${styles.filmRoll} ${styles[side]}`}>
+    <div className={`${styles.filmRoll}`}>
       <div className={styles.imageContainer}>
         {images.map((image, index) => (
           <div className={styles.imageWithHoles} key={image}>
