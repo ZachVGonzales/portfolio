@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import styles from "./projects.module.css";
-import ProjectCard from "./projectcard";
+import ProjectCard from "./ProjectCard";
+import { projects } from "../../data/projectData"
 
 export default function Projects() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -47,9 +48,7 @@ export default function Projects() {
   return (
     <div className={styles.container}>
       <div
-        className={`${styles.deckPlaceholder} ${
-          isExpanded ? styles.showPlaceholder : ""
-        }`}
+        className={`${styles.deckPlaceholder}`}
         onClick={isExpanded ? toggleView : undefined}
       >
         <div
@@ -57,7 +56,7 @@ export default function Projects() {
           onClick={!isExpanded ? toggleView : undefined}
           ref={deckRef} // Reference to the deck DOM element
         >
-          {[...Array(10)].map((_, i, array) => {
+          {projects.map((project, i, array) => {
             const index = isExpanded ? array.length - 1 - i : i; // Reverse order for grid layout
             const column = isExpanded ? index % columns : 0; // Columns for grid layout
             const row = isExpanded ? Math.floor(index / columns) : 0; // Rows for grid layout
@@ -68,8 +67,13 @@ export default function Projects() {
                 isExpanded={isExpanded}
                 column={column}
                 row={row}
-                deckLeftOffset={`${deckPosition.left - 100}px`}
-                deckTopOffset={`${deckPosition.top}px`}
+                deckLeftOffset={`${deckPosition.left - 155}px`}
+                deckTopOffset={`${deckPosition.top + 275}px`}
+                title={project.title}
+                icon={project.icon}
+                suit={project.suit}
+                description={project.description}
+                link={project.link}
               />
             );
           })}

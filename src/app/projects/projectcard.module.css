@@ -1,16 +1,18 @@
 .card {
-  width: 150px;
-  height: 210px;
-  background: #007bff;
-  color: white;
-  border: 2px solid #0056b3;
+  width: 200px;
+  height: 275px;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   transition: transform 0.5s ease, opacity 0.5s ease;
-  opacity: 1;
+  visibility: hidden; /* Makes the container invisible */
+  perspective: 1000px; /* Enables 3D transformations */
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .5);
 }
 
 /* Stacked deck positions */
@@ -25,8 +27,96 @@
 .cardGrid {
   transform: translate(
     calc(var(--column) * 300px - var(--deck-left-offset)), /* Horizontal offset from deck */
-    calc(var(--row) * 300px + var(--deck-top-offset)) /* Vertical offset below deck */
+    calc(var(--row) * 400px + var(--deck-top-offset)) /* Vertical offset below deck */
   );
   transition: transform 0.5s ease, opacity 0.5s ease;
   transition-delay: calc(var(--index) * 0.1s);
+}
+
+.suitTopLeft, .suitBottomRight {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+}
+
+.suitTopLeft {
+  top: 4px;
+  left: 4px;
+}
+
+.suitBottomRight {
+  bottom: 4px;
+  right: 4px;
+}
+
+.cardInfoContainer {
+  display: flex;
+  flex-direction: column; /* Stacks the icon and title vertically */
+  justify-content: center; /* Centers content vertically within the container */
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Ensures text is centered */
+  gap: 0px; /* Adds space between the icon and title */
+  width: 100%; /* Makes sure it spans the width of the card */
+  height: 100%; /* Makes sure it spans the height of the card */
+}
+
+.cardIcon {
+  width: 75px;
+  height: 75px;
+  gap: 5px;
+}
+
+.cardTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: black;
+  gap: 5px;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  border: 4px solid #020a12;
+  border-radius: 8px;
+  visibility: visible; /* Ensures the child remains visible */
+}
+
+.isFlipped {
+  transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+}
+
+.cardFront {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBack {
+  background: #f0f0f0;
+  color: #333;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
