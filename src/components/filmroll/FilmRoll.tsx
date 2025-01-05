@@ -3,10 +3,9 @@ import styles from './filmroll.module.css';
 
 interface FilmRollProps {
   images: string[]; // Array of image URLs
-  side: 'left' | 'right'; // Side of the screen
 }
 
-const FilmRoll: React.FC<FilmRollProps> = ({ images, side }) => {
+const FilmRoll: React.FC<FilmRollProps> = ({ images }) => {
   const generateSprocketHoles = (count: number) => {
     return Array.from({ length: count }).map((_, index) => (
       <div key={index} className={styles.sprocketHole}></div>
