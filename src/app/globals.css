@@ -1,11 +1,10 @@
-
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 100px;
-  max-width: 600px;
+  max-width: 60%;  /* Update to full width */
   margin: auto;
 }
 
@@ -21,17 +20,17 @@
   line-height: 1.6;
 }
 
-.left, .right {
-  position: absolute;  /* Position relative to the container */
+.filmleft, .filmright {
+  position: fixed;  /* Use fixed positioning to keep them at the sides of the viewport */
   top: 100px;  /* Adjust to control the vertical positioning */
   width: 300px;  /* Adjust the width to your desired size */
   height: auto;  /* Adjust height to fit the content */
 }
 
-.left {
+.filmleft {
   left: 10;  /* Align to the left edge */
 }
 
-.right {
-  right: 300;  /* Align to the right edge */
+.filmright {
+  right: -90;  /* Align to the right edge */
 }
